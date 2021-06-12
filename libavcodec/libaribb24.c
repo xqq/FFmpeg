@@ -393,3 +393,17 @@ const AVCodec ff_libaribb24_decoder = {
     .priv_class= &aribb24_class,
     .wrapper_name = "libaribb24",
 };
+
+const AVCodec ff_libaribb24_superimpose_decoder = {
+    .name      = "libaribb24_superimpose",
+    .long_name = NULL_IF_CONFIG_SMALL("libaribb24 ARIB STD-B24 superimpose decoder"),
+    .type      = AVMEDIA_TYPE_SUBTITLE,
+    .id        = AV_CODEC_ID_ARIB_SUPERIMPOSE,
+    .priv_data_size = sizeof(Libaribb24Context),
+    .init      = libaribb24_init,
+    .close     = libaribb24_close,
+    .decode    = libaribb24_decode,
+    .flush     = libaribb24_flush,
+    .priv_class= &aribb24_class,
+    .wrapper_name = "libaribb24_superimpose",
+};
